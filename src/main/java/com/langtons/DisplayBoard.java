@@ -5,9 +5,6 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
 public class DisplayBoard extends Group {
-    static final int SCREEN_WIDTH = 1280;
-    static final int SCREEN_HEIGHT = 600;
-
     Board cellBoard = new Board();
 
     int size = 20;
@@ -18,8 +15,8 @@ public class DisplayBoard extends Group {
     }
 
     public void drawBoard() {
-        for (int i=0; i < SCREEN_WIDTH / (size + spacing); i++) {
-            for (int j=0; j< SCREEN_HEIGHT / (size + spacing); j++) {
+        for (int i=0; i < Constants.SCREEN_WIDTH / (size + spacing); i++) {
+            for (int j=0; j< Constants.SCREEN_HEIGHT / (size + spacing); j++) {
                 Rectangle rectangle = new Rectangle();
                 rectangle.setX(i * (size+spacing));
                 rectangle.setY(j * (size+spacing));
@@ -33,12 +30,12 @@ public class DisplayBoard extends Group {
     }
 
     void flipSquare(int x, int y) {
-        int cellNumber = x*SCREEN_HEIGHT/22 + y;
+        int cellNumber = x * Constants.SCREEN_HEIGHT / 22 + y;
         ((Rectangle)this.getChildren().get(cellNumber)).setFill(cellBoard.getColorAtCords(x, y));
     }
 
     void flipSquare(int x, int y, Color color) {
-        int cellNumber = x*SCREEN_HEIGHT/22 + y;
+        int cellNumber = x * Constants.SCREEN_HEIGHT / 22 + y;
         ((Rectangle)this.getChildren().get(cellNumber)).setFill(color);
     }
 
