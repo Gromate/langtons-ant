@@ -1,14 +1,8 @@
 package com.langtons;
 
-import java.util.Random;
-
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
-import javafx.scene.Group;
-import javafx.scene.Node;
 import javafx.scene.Scene;
-import javafx.scene.paint.Color;
-import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
 public class App extends Application {
