@@ -5,6 +5,10 @@ public class Ant {
     int y;
     Orientation orientation;
 
+    public Orientation getOrientation() {
+        return orientation;
+    }
+
     public Ant() {
         this.x = 0;
         this.y = 0;
@@ -23,30 +27,72 @@ public class Ant {
         this.orientation = orientation;
     }
 
-    void move() {
+    public int getX() {
+        return x;
+    }
+
+    public int getY() {
+        return y;
+    }
+
+    public void move() {
         switch(orientation) {
-            case UP: y = y-1;
-            case DOWN: y = y+1;
-            case LEFT: y = x-1;
-            case RIGHT: y = x+1;
+            case UP: 
+                this.y -= 1;
+                break;
+
+            case DOWN: 
+                this.y += 1;
+                break;
+
+            case LEFT: 
+                this.x = x-1;
+                break;
+
+            case RIGHT: 
+                this.x = x+1;
+                break;
+
         }
     }
 
     void turn_clockwise() {
-        switch(orientation) {
-            case UP: this.orientation = Orientation.RIGHT;
-            case RIGHT: this.orientation = Orientation.DOWN;
-            case DOWN: this.orientation = Orientation.LEFT;
-            case LEFT: this.orientation = Orientation.UP;
+        switch(this.orientation) {
+            case UP: 
+                this.orientation = Orientation.RIGHT;
+                break;
+
+            case RIGHT: 
+                this.orientation = Orientation.DOWN;
+                break;
+
+            case DOWN: 
+                this.orientation = Orientation.LEFT;
+                break;
+
+            case LEFT:
+                this.orientation = Orientation.UP;
+                break;
         }
     }
 
-    void turn_anitclockwise() {
+    void turn_anticlockwise() {
         switch(orientation) {
-            case UP: this.orientation = Orientation.LEFT;
-            case LEFT: this.orientation = Orientation.DOWN;
-            case DOWN: this.orientation = Orientation.RIGHT;
-            case RIGHT: this.orientation = Orientation.UP;
+            case UP: 
+                this.orientation = Orientation.LEFT;
+                break;
+
+            case LEFT: 
+                this.orientation = Orientation.DOWN;
+                break;
+
+            case DOWN: 
+                this.orientation = Orientation.RIGHT;
+                break;
+
+            case RIGHT: 
+                this.orientation = Orientation.UP;
+                break;
         }
     }
 

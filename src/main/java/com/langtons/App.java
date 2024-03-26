@@ -34,13 +34,9 @@ public class App extends Application {
     }
 
     private class TimerMethod extends AnimationTimer {
-
-        Random rand = new Random();
-
         @Override
         public void handle(long arg0) {
-            for (Node children : root.getChildren()) {
-            }
+            root.move();
         }
 
     }
