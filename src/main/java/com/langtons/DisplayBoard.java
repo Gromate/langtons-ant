@@ -37,16 +37,12 @@ public class DisplayBoard extends Group {
     }
 
     public void move() {
-        flipSquare(cellBoard.getAntX(), cellBoard.getAntY());
+        for (Ant ant : cellBoard.ants) {
+            flipSquare(ant.getX(), ant.getY());
+        }
         cellBoard.move();
-        colorAnt();
+        for (Ant ant : cellBoard.ants) {
+            flipSquare(ant.getX(), ant.getY(), Constants.ANT_COLOR);
+        }
     }
-
-    public void colorAnt() {
-        int x = cellBoard.getAntX();
-        int y = cellBoard.getAntY();
-
-        flipSquare(x, y, Constants.ANT_COLOR);
-    }
-
 }
