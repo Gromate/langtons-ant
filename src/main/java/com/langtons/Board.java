@@ -34,8 +34,6 @@ public class Board {
     public void move() {
         int x = ant.getX();
         int y = ant.getY();
-        System.out.println(y);
-        System.out.println(x);
 
         if (!cellBoard[x][y].isFlipped()) {
             ant.turn_clockwise();
