@@ -3,6 +3,8 @@ package com.langtons;
 import javafx.scene.paint.Color;
 
 public class Constants {
+    public static final int ANT_COUNT = 1;
+
     public static final int SCREEN_WIDTH = 1280;
     public static final int SCREEN_HEIGHT = 600;
     public static final int CELL_SIZE = 20;
