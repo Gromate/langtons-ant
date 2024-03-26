@@ -31,6 +31,30 @@ public class Ant {
         return x;
     }
 
+    public void setX(int x) {
+        this.x = x;
+
+        while(this.x >= Constants.SCREEN_CELLS_WIDTH) {
+            this.x -= Constants.SCREEN_CELLS_WIDTH;
+        }
+
+        while(this.x < 0) {
+            this.x += (Constants.SCREEN_CELLS_WIDTH - 1);
+        }
+    }
+
+    public void setY(int y) {
+        this.y = y;
+
+        while(this.y >= Constants.SCREEN_CELLS_HEIGHT) {
+            this.y -= Constants.SCREEN_CELLS_HEIGHT;
+        }
+
+        while(this.y < 0) {
+            this.y += (Constants.SCREEN_CELLS_HEIGHT - 1);
+        }
+    }
+
     public int getY() {
         return y;
     }
@@ -38,19 +62,19 @@ public class Ant {
     public void move() {
         switch(orientation) {
             case UP: 
-                this.y -= 1;
+                this.setY(y-1);
                 break;
 
             case DOWN: 
-                this.y += 1;
+                this.setY(y+1);
                 break;
 
             case LEFT: 
-                this.x = x-1;
+                this.setX(x-1);
                 break;
 
             case RIGHT: 
-                this.x = x+1;
+                this.setX(x+1);
                 break;
 
         }
