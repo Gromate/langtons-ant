@@ -4,16 +4,16 @@ import javafx.scene.paint.Color;
 
 public class Board {
     Cell[][] cellBoard;
-    Ant ant = new Ant(1280/22/2,600/22/4);
+    Ant ant = new Ant(Constants.SCREEN_CELLS_WIDTH / 2,Constants.SCREEN_CELLS_HEIGHT / 2);
 
     public Board() {
-        cellBoard = new Cell[1280/22][600/22];
+        cellBoard = new Cell[Constants.SCREEN_CELLS_WIDTH][Constants.SCREEN_CELLS_HEIGHT];
         this.fillBoard();
     }
 
     void fillBoard() {
-        for (int i=0; i<1280/22; i++) {
-            for (int j=0; j<600/22; j++) {
+        for (int i=0; i<Constants.SCREEN_CELLS_WIDTH; i++) {
+            for (int j=0; j<Constants.SCREEN_CELLS_HEIGHT; j++) {
                 cellBoard[i][j] = new Cell();
             }
         }
