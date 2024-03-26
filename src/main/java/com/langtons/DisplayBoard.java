@@ -46,7 +46,7 @@ public class DisplayBoard extends Group {
         int x = cellBoard.getAntX();
         int y = cellBoard.getAntY();
 
-        flipSquare(x, y, Color.RED);
+        flipSquare(x, y, Constants.ANT_COLOR);
     }
 
 }

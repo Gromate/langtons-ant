@@ -17,11 +17,11 @@ public class Cell {
 
     public void setColor() {
         if (isFlipped) {
-            color = Color.DARKGREY;
+            color = Constants.FLIPPED_CELLS;
         }
 
         else if (!isFlipped) {
-            color = Color.WHEAT;
+            color = Constants.NON_FLIPPED_CELLS;
         }
     }
 
